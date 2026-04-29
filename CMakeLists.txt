@@ -135,6 +135,7 @@ set(COMMON_SOURCES
     src/models/DailyFeed.cpp
     src/utils/Logger.cpp
     src/utils/JsonHelper.cpp
+    src/utils/SoundPlayer.cpp
 )
 
 # Console version sources
@@ -165,6 +166,7 @@ set(COMMON_HEADERS
     src/models/DailyFeed.h
     src/utils/Logger.h
     src/utils/JsonHelper.h
+    src/utils/SoundPlayer.h
 )
 
 set(GUI_HEADERS

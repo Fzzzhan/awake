@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 #include "SettingsDialog.h"
 #include "../utils/Logger.h"
+#include "../utils/SoundPlayer.h"
 #include "../services/PreferenceManager.h"
 #include <QCloseEvent>
 #include <QMessageBox>
@@ -285,6 +286,7 @@ void MainWindow::onRefreshClicked() {
                 QSystemTrayIcon::Information,
                 3000
             );
+            SoundPlayer::playSound(SoundPlayer::SoundType::Success);
         } catch (const std::exception& e) {
             LOG_ERROR("Failed to generate feed: {}", e.what());
             QMessageBox::critical(this, "错误", QString("生成内容失败: %1").arg(e.what()));
@@ -306,6 +308,7 @@ void MainWindow::onSettingsClicked() {
             QSystemTrayIcon::Information,
             2000
         );
+        SoundPlayer::playSound(SoundPlayer::SoundType::Notify);
     }
 }
 
@@ -322,6 +325,7 @@ void MainWindow::onFavorite(const QString& contentId) {
             QSystemTrayIcon::Information,
             2000
         );
+        SoundPlayer::playSound(SoundPlayer::SoundType::Success);
     } else {
         LOG_ERROR("Failed to favorite content {}", id);
     }
@@ -351,6 +355,7 @@ void MainWindow::onDislike(const QString& contentId) {
             QSystemTrayIcon::Information,
             2000
         );
+        SoundPlayer::playSound(SoundPlayer::SoundType::Notify);
     } else {
         LOG_ERROR("Failed to dislike content {}", id);
     }
@@ -409,6 +414,7 @@ void MainWindow::onTrayRefresh() {
                 QSystemTrayIcon::Information,
                 3000
             );
+            SoundPlayer::playSound(SoundPlayer::SoundType::Success);
             LOG_INFO("Generated new feed with {} items from tray", newFeed.size());
         } else {
             LOG_WARN("Generated feed is empty");
