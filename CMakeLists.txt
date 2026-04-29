@@ -93,7 +93,45 @@ endif()
 # Prioritize system library paths before anaconda
 link_directories(BEFORE /usr/lib/x86_64-linux-gnu /usr/lib /usr/local/lib)
 
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Network)
+find_package(Qt5 COMPONENTS Core Gui Widgets Network)
+
+# Provide helpful error message if Qt5 is not found
+if(NOT Qt5_FOUND)
+    message(FATAL_ERROR
+        "\n"
+        "╔════════════════════════════════════════════════════════════════╗\n"
+        "║                    Qt5 Not Found                               ║\n"
+        "╚════════════════════════════════════════════════════════════════╝\n"
+        "\n"
+        "Qt5 is required to build this project but was not found on your system.\n"
+        "\n"
+        "Qt5 is NOT included via CPM because:\n"
+        "  • It's very large (>1GB download)\n"
+        "  • Takes 1-2 hours to compile from source\n"
+        "  • System packages are optimized and ready to use\n"
+        "\n"
+        "📦 To install Qt5, run:\n"
+        "\n"
+        "   Ubuntu/Debian:\n"
+        "   $ sudo apt update\n"
+        "   $ sudo apt install qtbase5-dev qttools5-dev qttools5-dev-tools\n"
+        "\n"
+        "   Fedora/RHEL:\n"
+        "   $ sudo dnf install qt5-qtbase-devel qt5-qttools-devel\n"
+        "\n"
+        "   Arch Linux:\n"
+        "   $ sudo pacman -S qt5-base qt5-tools\n"
+        "\n"
+        "   macOS (Homebrew):\n"
+        "   $ brew install qt@5\n"
+        "\n"
+        "After installing Qt5, re-run cmake:\n"
+        "   $ rm -rf build\n"
+        "   $ cmake -B build -G Ninja\n"
+        "   $ cmake --build build\n"
+        "\n"
+    )
+endif()
 
 # Note if using anaconda Qt5
 if(Qt5_DIR MATCHES "anaconda")
