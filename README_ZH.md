@@ -15,6 +15,23 @@
 - ✅ **设置对话框**：完整的配置界面，支持内容配比、刷新时间、主题等设置
 - ✅ **可扩展架构**：插件式内容提供者，支持种子内容、RSS、LLM（预留）
 
+## 📦 安装方式
+
+### Homebrew (macOS/Linux) - 推荐
+
+```bash
+# 添加 tap
+brew tap Fzzzhan/tap
+
+# 安装
+brew install awake
+
+# 运行
+awake_gui
+```
+
+### 从源码编译
+
 ## 📋 依赖项
 
 ### Ubuntu/Debian

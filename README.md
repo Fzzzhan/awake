@@ -15,6 +15,23 @@ A desktop application based on C++20 and Qt6 that provides 10 curated items dail
 - ✅ **Settings Dialog**: Complete configuration interface for content ratio, refresh time, theme settings
 - ✅ **Extensible Architecture**: Plugin-style content providers supporting seed content, RSS, LLM (reserved)
 
+## 📦 Installation
+
+### Homebrew (macOS/Linux) - Recommended
+
+```bash
+# Add tap
+brew tap Fzzzhan/tap
+
+# Install
+brew install awake
+
+# Run
+awake_gui
+```
+
+### From Source
+
 ## 📋 Dependencies
 
 ### Ubuntu/Debian
