@@ -1,8 +1,8 @@
 class Awake < Formula
   desc "Daily cognitive supplement tool with smart content generation"
   homepage "https://github.com/Fzzzhan/awake"
-  url "https://github.com/Fzzzhan/awake/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "" # Will be filled after release
+  url "https://github.com/Fzzzhan/awake/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "96517d754abc1123593cb6b3824a68f86967aa183abfa07156b17f34a0e34300"
   license "MIT"
   head "https://github.com/Fzzzhan/awake.git", branch: "main"
 
