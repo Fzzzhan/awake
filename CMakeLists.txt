@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(awake VERSION 1.0.0 LANGUAGES CXX)
+project(awake VERSION 1.0.1 LANGUAGES CXX)
 
 # Suppress RPATH warnings when using anaconda Qt5
 cmake_policy(SET CMP0042 NEW)
